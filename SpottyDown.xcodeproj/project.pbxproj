@@ -97,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4F86C6D724BF83EA00D45785 /* Build configuration list for PBXProject "Spottydown" */;
+			buildConfigurationList = 4F86C6D724BF83EA00D45785 /* Build configuration list for PBXProject "SpottyDown" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -315,7 +315,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4F86C6D724BF83EA00D45785 /* Build configuration list for PBXProject "Spottydown" */ = {
+		4F86C6D724BF83EA00D45785 /* Build configuration list for PBXProject "SpottyDown" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4F86C6EA24BF83EC00D45785 /* Debug */,
