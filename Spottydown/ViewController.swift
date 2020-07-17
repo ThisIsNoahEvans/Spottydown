@@ -16,8 +16,6 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var textField: NSTextField!
     
-    @IBOutlet weak var locField: NSTextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,20 +32,46 @@ class ViewController: NSViewController {
     
     
     @IBAction func download(_ sender: Any) {
-        let task = Process()
-        let command = "spotdl -s \"\(textField.stringValue)\" -f \"\(locField.stringValue)\""
-        task.executableURL = URL(fileURLWithPath: "/bin/zsh")
-        task.arguments = ["--login", "-c", command]
+        
+        // Define save panel
+        let savePanel = NSSavePanel()
+        savePanel.title = "Save Song"
+        savePanel.prompt = "Save"
+        savePanel.nameFieldLabel = "File Name"
+        savePanel.nameFieldStringValue = "song.mp3"
+        savePanel.isExtensionHidden = false
+        savePanel.canSelectHiddenExtension = true
+        savePanel.allowedFileTypes = ["mp3"]
+        
+        // If selected file
+        if (savePanel.runModal() == NSApplication.ModalResponse.OK) {
+            // Get URL
+            var saveStr: String = savePanel.url!.absoluteString
+            saveStr = String(saveStr.dropFirst(7))
+            // Define task
+            let task = Process()
+            let command = "spotdl -s \"\(textField.stringValue)\" -f \"\(saveStr)\""
+            task.executableURL = URL(fileURLWithPath: "/bin/zsh")
+            task.arguments = ["--login", "-c", command]
+            let connection = Pipe()
+            task.standardOutput = connection
+            // Run task
+            do {
+                try task.run()
+            }
+            catch {
+                print("Error")
+            }
+            // No file selected
+            } else {
+                print("Cancelled")
+                return
+            }
+        
+       
+        
 
-        let connection = Pipe()
-        task.standardOutput = connection
-
-        do {
-            try task.run()
-        }
-        catch {
-            print("Error")
-        }
+  
     }
     
 

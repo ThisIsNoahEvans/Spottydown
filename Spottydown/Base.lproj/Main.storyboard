@@ -46,9 +46,9 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -67,32 +67,21 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Spottydown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="ViewController" customModule="Spottydown" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="224"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vgf-E4-BME">
-                                <rect key="frame" x="91" y="191" width="299" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vgf-E4-BME">
+                                <rect key="frame" x="91" y="145" width="299" height="59"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Spottydown" id="U8x-tF-16z">
                                     <font key="font" metaFont="systemHeavy" size="50"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVz-Tx-x2C">
-                                <rect key="frame" x="20" y="149" width="440" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Paste in a Spotify URL..." drawsBackground="YES" id="Zwx-Ap-r3F">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UT4-O4-A3X">
-                                <rect key="frame" x="187" y="59" width="107" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UT4-O4-A3X">
+                                <rect key="frame" x="187" y="13" width="107" height="32"/>
                                 <buttonCell key="cell" type="push" title="Download" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mMW-vp-Yr9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -101,25 +90,33 @@
                                     <action selector="download:" target="XfG-lQ-9wD" id="CuS-kg-MS6"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ia-bT-1Uj">
-                                <rect key="frame" x="20" y="118" width="440" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Paste in a destination folder path..." drawsBackground="YES" id="RAa-j6-ddV">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uVz-Tx-x2C">
+                                <rect key="frame" x="20" y="90" width="440" height="21"/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Paste in a Spotify URL..." drawsBackground="YES" id="Zwx-Ap-r3F">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="UT4-O4-A3X" firstAttribute="centerX" secondItem="Vgf-E4-BME" secondAttribute="centerX" id="NkM-Wg-vFU"/>
+                            <constraint firstItem="UT4-O4-A3X" firstAttribute="centerX" secondItem="uVz-Tx-x2C" secondAttribute="centerX" id="OFf-4K-iH0"/>
+                            <constraint firstItem="UT4-O4-A3X" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="SrN-lP-mXZ"/>
+                            <constraint firstAttribute="bottom" secondItem="UT4-O4-A3X" secondAttribute="bottom" constant="20" symbolic="YES" id="iD9-xf-pvY"/>
+                            <constraint firstItem="Vgf-E4-BME" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="kmr-01-wfk"/>
+                            <constraint firstItem="Vgf-E4-BME" firstAttribute="centerX" secondItem="uVz-Tx-x2C" secondAttribute="centerX" id="pb9-Vf-Hwu"/>
+                            <constraint firstItem="uVz-Tx-x2C" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="snH-nh-IzR"/>
+                            <constraint firstItem="UT4-O4-A3X" firstAttribute="top" secondItem="uVz-Tx-x2C" secondAttribute="bottom" constant="50" id="w9h-6X-5Qv"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="locField" destination="1ia-bT-1Uj" id="ZeE-nI-wHd"/>
                         <outlet property="textField" destination="uVz-Tx-x2C" id="FWe-Rf-mWv"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="632"/>
         </scene>
     </scenes>
 </document>
