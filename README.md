@@ -1,4 +1,4 @@
 # Spottydown [WIP]
 macOS GUI for SpotDL
 
-Coming soon....
+## This project has been archived until further notice.
